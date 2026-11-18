@@ -252,6 +252,12 @@ The failure this prevents: a review that measures nothing and awards most of the
 points scores a portfolio higher than a review that measures everything and finds
 real problems. If you cannot test it, take it off the board. Do not price it in.
 
+This carries into the scoring table. The area's Points cell shows what was
+actually scorable, not its full weight, and its Given cell shows a number. An
+accessibility row that kept 3 of its 15 points reads 3 and 2, never 15 and
+"2 of 3 assessed". Both columns are bare numbers that add up to the totals
+beneath them, so a reader can check the arithmetic in their head.
+
 ## Deal-breakers
 
 These replace red-flag point deductions. They are structural, not stylistic.
