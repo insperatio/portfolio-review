@@ -123,7 +123,7 @@ line otherwise, including when counting was impossible. See SKILL.md section 7.}
 
 ---
 Reviewed with mj-portfolio-review, a free skill by Mariana Johnels.
-Senior UX/Product Designer. linkedin.com/in/marianajohnels · marianajohnels.com
+linkedin.com/in/marianajohnels · marianajohnels.com
 
 Found this useful, or got something wrong? Tell Mariana: {feedback_url}
 ```
