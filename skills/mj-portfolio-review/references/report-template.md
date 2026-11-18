@@ -101,11 +101,19 @@ such. Put the AI note here when no AI work appears.}
 |---|---|---|
 | Case study clarity | 20 | {n} |
 | Valid data and outcomes | 20 | {n} |
-| Visual craft | 20 | {n, or "not assessed" with the points removed from the total} |
+| Visual craft | {20, or only the points that were scorable} | {n} |
 | First scan and organization | 15 | {n} |
-| Accessibility | 15 | {n, or "not assessed" with the points removed from the total} |
+| Accessibility | {15, or only the points that were scorable} | {n} |
 | Role and level fit | 10 | {n} |
-| **Total available** | **{100, 90, 85 or 65}** | **{n}** |
+| **Total available** | **{the Points column added up}** | **{n}** |
+
+{Both columns hold bare numbers. Never a word, never a phrase like "not
+assessed" or "2 of 3 assessed". When checks could not be run, cut that area's
+Points down to what was actually scorable and put the earned number beside it:
+accessibility with twelve of fifteen points untested reads 3 and 2. The Points
+column must add up to the total available and the Given column to the score, so
+a reader can check the arithmetic. Name the untested checks under Open checks
+and in the "Why {points available}, not 100" line, never inside this table.}
 
 {Note any cap applied and why.}
 
