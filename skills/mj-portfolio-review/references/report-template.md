@@ -25,10 +25,10 @@ inside the band they sit and what would move them up a band.}
 
 | Band | Range | |
 |---|---|---|
-| Send it | 85 to 100 | {You are here} |
-| Send after fixes | 70 to 84 | {You are here} |
-| Fix before sending | 50 to 69 | {You are here} |
-| Rework | Under 50 | {You are here} |
+| Send it | 85% to 100% | {You are here} |
+| Send after fixes | 70% to 84% | {You are here} |
+| Fix before sending | 50% to 69% | {You are here} |
+| Rework | Under 50% | {You are here} |
 
 {Mark one row only. Leave the other three cells empty.}
 
