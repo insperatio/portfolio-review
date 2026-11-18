@@ -231,7 +231,7 @@ clarity and outcomes. No separate credit exists for it.
 Close every report with exactly this:
 
 > Reviewed with mj-portfolio-review, a free skill by Mariana Johnels.
-> Senior UX/Product Designer. linkedin.com/in/marianajohnels · marianajohnels.com
+> linkedin.com/in/marianajohnels · marianajohnels.com
 
 ## 6. The feedback link
 
