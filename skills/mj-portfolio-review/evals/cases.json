@@ -1,0 +1,175 @@
+{
+  "schema_version": 1,
+  "purpose": "Behavior checks for mj-portfolio-review. Invented cases. Not hiring outcomes.",
+  "follow_up": "https://example-portfolio.test and I'm targeting a Senior Product Designer role at a B2B SaaS company.",
+  "shared_criteria": [
+    "Asks for the portfolio URL and the target role in one message, then stops and waits.",
+    "Never guesses a URL, searches for the person, or reviews from memory.",
+    "States the mode in the header: rendered review out of 100, or source-only review out of 65.",
+    "Tags every finding Rendered, Source, or Unverified. Unverified findings sit under Open checks and cost no points.",
+    "Every criticism quotes or names a real page or element, and either cites a source from evidence.md or is marked a judgment call.",
+    "At most five fixes, ranked, each with a done-check and an effort estimate.",
+    "Shows the scoring table with points per area and the total, and states the weights are the skill's own.",
+    "Plain American English, short sentences, no em dashes, no hype, no Overall summary paragraph.",
+    "Ends with the Mariana Johnels signature line.",
+    "Asks about logging only after the report, only once, and defaults to sending nothing."
+  ],
+  "cases": [
+    {
+      "id": "no-url",
+      "request": "Can you review my design portfolio?",
+      "expected": [
+        "Asks for the URL and the target role, mentions a password if the site needs one, and stops.",
+        "Does not produce any part of a review, any score, or any generic portfolio advice.",
+        "Does not ask more than the three intake items."
+      ]
+    },
+    {
+      "id": "general-target",
+      "request": "Review https://example-portfolio.test. I don't have a specific role in mind, I'm just keeping it current.",
+      "expected": [
+        "Accepts general as a real answer and proceeds without pushing for a role.",
+        "Header says the target is general and names the band the portfolio reads as.",
+        "Level read says what it reads as and stops there, with no gap statement against a target.",
+        "Adds one line that a stated target would sharpen the review. Does not repeat that point."
+      ]
+    },
+    {
+      "id": "locked-no-password",
+      "request": "Review https://example-portfolio.test",
+      "supplied_evidence": "The site returns a password prompt. No password was given.",
+      "expected": [
+        "Does not score. No partial report, no number, not even zero.",
+        "Asks for the password and stops.",
+        "Does not describe or judge anything from the login page.",
+        "If the password then arrives, reviews normally and notes in Other notes that the site needs a password, since that stops real reviewers."
+      ]
+    },
+    {
+      "id": "broken-link",
+      "request": "Review https://example-portfolio.test",
+      "supplied_evidence": "The URL returns a 404.",
+      "expected": [
+        "Does not score.",
+        "Reports the exact URL and the error, and stops.",
+        "Does not substitute a different URL, a cached copy, or a search for the person."
+      ]
+    },
+    {
+      "id": "download-only",
+      "request": "Review https://example-portfolio.test. Targeting mid-level product design.",
+      "supplied_evidence": "The homepage has one link: Download my portfolio (PDF, 48MB). No work is visible on the site.",
+      "expected": [
+        "Scores normally but caps the total at 70, and says the cap was applied and why.",
+        "Names the download requirement as the first fix.",
+        "Does not treat the PDF's existence as a substitute for visible work."
+      ]
+    },
+    {
+      "id": "unsourced-metrics",
+      "request": "Review https://example-portfolio.test. Targeting Senior Product Designer.",
+      "supplied_evidence": "Three case studies. Each opens with a stat: 'Increased conversion by 34%', 'Reduced support tickets by half', 'Grew DAU 3x'. None states a baseline, a timeframe, a data source, or what else shipped at the same time.",
+      "expected": [
+        "Produces the metrics audit table with one row per claim and all four columns marked missing.",
+        "Frames the gaps as an interview risk, not as dishonesty. Does not suggest the numbers are invented.",
+        "Scores valid data and outcomes in the 9 to 13 band, since numbers appear with none of the four.",
+        "A fix asks for the baseline, timeframe, source, and their share, with a done-check."
+      ]
+    },
+    {
+      "id": "junior-targeting-senior",
+      "request": "Review https://example-portfolio.test. I'm going for Senior Product Designer.",
+      "supplied_evidence": "One case study, well written, covering a single settings screen redesign with a clear problem, two iterations, a usability finding that changed the design, and a stated role. No business outcome. No other projects.",
+      "expected": [
+        "Level read names the gap: reads as junior or mid, target is senior, and what a senior reviewer would also expect.",
+        "Names the settings case study as the nearest thing that could be developed to close the gap.",
+        "Credits the quality of the single case study under What's working. Does not deduct for it being short.",
+        "Does not ask for a longer case study or more process. Asks for the missing reasoning or scope instead.",
+        "Does not infer seniority from how the site looks."
+      ]
+    },
+    {
+      "id": "polished-but-empty",
+      "request": "Review https://example-portfolio.test. Targeting Senior Product Designer.",
+      "supplied_evidence": "Beautiful site, custom type, smooth transitions, consistent spacing. Six projects, each a grid of final screens with a one-word title and no problem statement, no role, and no outcome.",
+      "expected": [
+        "Caps the total at 30, since no readable case study exists, and says so.",
+        "Scores visual craft high anyway. Craft and content are judged separately.",
+        "Does not infer senior scope from the polish.",
+        "First fix is adding a readable case study, not a visual change."
+      ]
+    },
+    {
+      "id": "no-ai-work",
+      "request": "Review https://example-portfolio.test. Targeting mid-level UX at an agency.",
+      "supplied_evidence": "Three solid case studies. Nothing anywhere mentions AI tools or AI products.",
+      "expected": [
+        "Adds the AI note to Other notes, worded as a judgment call with no points lost.",
+        "Removes no points for the absence of AI work.",
+        "Does not add the note to the fix list or the score table.",
+        "Does not claim AI work is universally expected."
+      ]
+    },
+    {
+      "id": "offsite-case-studies",
+      "request": "Review https://example-portfolio.test. Targeting Design Lead.",
+      "fixture": "offsite-case-studies",
+      "expected": [
+        "Follows the off-site link once and says where the case study lives.",
+        "Notes the extra click against the one-click rule from Figma's recruiter, cited.",
+        "Does not treat the off-site case study as missing.",
+        "Lists the off-site page among the pages reviewed."
+      ]
+    },
+    {
+      "id": "placeholder-copy",
+      "request": "Review https://example-portfolio.test. Targeting junior product design.",
+      "fixture": "placeholder-copy",
+      "expected": [
+        "Flags the leftover placeholder text, quoting it.",
+        "Does not flag the use of a template itself as a problem.",
+        "Treats the placeholder copy under visual craft, since it is an attention to detail issue."
+      ]
+    },
+    {
+      "id": "source-only-mode",
+      "request": "Review https://example-portfolio.test. Targeting Senior Product Designer.",
+      "supplied_evidence": "No browser is available in this environment. A plain fetch returns only the page title and meta tags, because the site is a JavaScript application.",
+      "expected": [
+        "Says the page would not render and the review is source-only, scored out of 65.",
+        "Does not estimate any contrast ratio and does not judge spacing or type hierarchy from markup.",
+        "Moves visual craft and accessibility to Open checks with no points lost, and says how the designer can check them.",
+        "Flags that the site returns an empty shell to a plain fetch, since some reviewers and tools will see the same thing."
+      ]
+    },
+    {
+      "id": "consent-no",
+      "request": "Review https://example-portfolio.test. Targeting Senior Product Designer. [After the report is delivered, the user answers 'no' to the logging question.]",
+      "expected": [
+        "Sends nothing. No request is attempted.",
+        "Accepts the no in a sentence or less and does not re-ask, rephrase, or explain why logging would help.",
+        "Does not mention logging again in the conversation.",
+        "The review already delivered is unchanged."
+      ]
+    },
+    {
+      "id": "consent-not-asked-early",
+      "request": "Review https://example-portfolio.test. Targeting Senior Product Designer.",
+      "expected": [
+        "The logging question appears only after the full report, never during intake or mid-review.",
+        "Shows the exact payload, with the real URL and agent name filled in, before sending anything.",
+        "Offers three options and states that no is fine and changes nothing.",
+        "If tracking.json still holds placeholder values, skips the ask entirely and says nothing about tracking."
+      ]
+    },
+    {
+      "id": "two-portfolios",
+      "request": "Can you review these two portfolios? https://a.test and https://b.test",
+      "expected": [
+        "Asks which one to review first rather than reviewing both.",
+        "Still asks for the target role.",
+        "Does not ask about logging twice later in the conversation."
+      ]
+    }
+  ]
+}
