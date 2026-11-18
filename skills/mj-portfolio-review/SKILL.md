@@ -24,6 +24,15 @@ Findings lean on the sources collected in `references/evidence.md`. Where no
 published figure exists, label the point a judgment call and move on. Numbers
 never get supplied from memory.
 
+## Before you start
+
+This skill expects a `references/` folder beside this file, holding `rubric.md`,
+`evidence.md`, `report-template.md`, `tracking.md` and `tracking.json`. If any of
+them cannot be read, say so in one line at the top of the report, name the file,
+and skip only what depends on it. Never let a missing file pass unmentioned. A
+report that looks complete while a section is silently absent is the worst
+outcome here.
+
 ## 1. Intake
 
 Send one message asking for the following, then wait. Do not begin before the
@@ -224,38 +233,56 @@ Close every report with exactly this:
 > Reviewed with mj-portfolio-review, a free skill by Mariana Johnels.
 > Senior UX/Product Designer. linkedin.com/in/marianajohnels · marianajohnels.com
 
-## 6. Counting and feedback
+## 6. The feedback link
 
-Read `references/tracking.md`. Two things happen after the report, both of them
-brief, neither of them a question.
+Always the last line of the report, under the signature. It needs no network
+access and no file beyond this one. Print it even when the counting step in
+section 7 is skipped, fails, or is impossible. Nothing in section 7 can cancel
+it:
 
-**Count the run.** Silent, automatic, two fields: today's date and which agent
-ran the review. Never the URL, never anything from the review. One POST, one
-attempt, no retries, nothing said about it if it fails. Where outbound requests
-are blocked, do not try and do not hand the person a link to do it themselves. An
-uncounted run is fine.
+> Found this useful, or got something wrong? Tell Mariana:
+> https://docs.google.com/forms/d/e/1FAIpQLSeuOejg0pufoDkMVcHYLysR02Y2i3aQfFYR2wWF_230n7Kctg/viewform
 
-Because it is silent, state it plainly above the signature:
+If `references/tracking.json` is readable and carries a different `feedback_url`,
+use that one instead. Otherwise use the address above.
+
+Say it once. An offer, not a question. Do not ask whether they will fill it in,
+do not follow up, do not offer to fill it in for them, and never describe a
+button that is not there.
+
+## 7. Counting the run
+
+Independent of section 6, and lower priority than it.
+
+Read `references/tracking.md`. The count is silent and automatic: two fields,
+today's date and which agent ran the review. Never the URL, never anything from
+the review. One POST, one attempt, no retries.
+
+Skip the count entirely, and say nothing at all about counting, when any of
+these is true:
+
+- You have no way to make an outbound POST request. Do not try, and do not hand
+  the person a link to do it themselves.
+- `references/tracking.json` is missing or unreadable.
+- `usage_form_id` is blank or still a placeholder.
+- The POST fails.
+
+Only when the count actually went through, state it plainly, directly above the
+signature:
 
 > Counted anonymously: today's date and which AI tool ran this, nothing else. No
 > URL, nothing from your review. Turn it off by blanking `usage_form_id` in the
 > skill's `references/tracking.json`.
 
-**Offer the feedback link.** One line, under that. An offer, not a question:
-
-> Found this useful, or got something wrong? Tell Mariana: {feedback_url}
-
-Say each once. Do not ask whether they will fill it in, do not follow up, do not
-offer to fill it in for them, and never describe a button that is not there.
-
-If `tracking.json` is missing or `usage_form_id` is blank, count nothing and say
-nothing about counting. Still show the feedback link if `feedback_url` is set.
+Never print that line for a run that was not counted. A report claiming a log
+that did not happen is worse than one that says nothing. An uncounted run is
+fine.
 
 The URL is the line. It identifies a person and their whole career, so it is
 never collected by counting. It reaches Mariana only when someone types it into
 the feedback form themselves.
 
-## 7. What the review cannot claim
+## 8. What the review cannot claim
 
 - Name the pages you could not reach and the ones you skimmed rather than read.
 - Name the mode and what it left unmeasured.
