@@ -118,7 +118,15 @@ The weights are this review's own, informed by Nielsen Norman Group, Meta
 Design, Figma's design recruiter, VMware Design, and WCAG 2.2. They are not
 endorsed by any of them.
 
+{Counting line. Include ONLY when the run was actually counted. Omit the whole
+line otherwise, including when counting was impossible. See SKILL.md section 7.}
+
 ---
 Reviewed with mj-portfolio-review, a free skill by Mariana Johnels.
 Senior UX/Product Designer. linkedin.com/in/marianajohnels · marianajohnels.com
+
+Found this useful, or got something wrong? Tell Mariana: {feedback_url}
 ```
+
+The feedback line is part of this template and is never dropped. The counting
+line is the only conditional part of the closing.
