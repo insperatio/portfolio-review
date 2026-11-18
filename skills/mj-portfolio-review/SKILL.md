@@ -216,7 +216,11 @@ How it should read:
 
 ### When no AI work appears
 
-Add this to other notes. It costs nothing at any level.
+Check first. Read the case studies and look for AI anywhere, in the product or
+in the process. This note is only for a portfolio that shows none. If any AI
+work is there, skip this note entirely and say nothing about its absence.
+
+When none appears, add this to other notes. It costs nothing at any level.
 
 > No AI work appears here. Some hiring teams are now asking about AI tools and
 > AI products, though it is far from universal and depends on the roles you are
@@ -225,6 +229,10 @@ Add this to other notes. It costs nothing at any level.
 
 AI work that is present gets scored like any other project, under case study
 clarity and outcomes. No separate credit exists for it.
+
+Never print the note and then name AI work the portfolio contains. A paragraph
+that says no AI work appears and then points at the AI work reads as careless
+and costs the report its authority.
 
 ### Signature
 
