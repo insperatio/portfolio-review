@@ -277,10 +277,14 @@ Say in the report when a cap was applied and why.
 
 ## Verdict bands
 
-- **85 to 100**: Send it.
-- **70 to 84**: Send after fixes.
-- **50 to 69**: Fix before sending.
-- **Under 50**: Rework.
+Bands are percentages of the points available, never raw point totals. Write
+them with the percent sign everywhere they appear, so nobody reads 85 as a
+point score.
+
+- **85% to 100%**: Send it.
+- **70% to 84%**: Send after fixes.
+- **50% to 69%**: Fix before sending.
+- **Under 50%**: Rework.
 
 In a source-only review the total available is 65, not 100. Convert the score to
 a percentage of the points available and apply the bands to that. Show both
@@ -317,15 +321,15 @@ A four-row table with their row marked:
 
 | Band | Range | |
 |---|---|---|
-| Send it | 85 to 100 | |
-| Send after fixes | 70 to 84 | You are here |
-| Fix before sending | 50 to 69 | |
-| Rework | Under 50 | |
+| Send it | 85% to 100% | |
+| Send after fixes | 70% to 84% | You are here |
+| Fix before sending | 50% to 69% | |
+| Rework | Under 50% | |
 
 Then one sentence on where inside the band they sit and what would move them up.
 "79% is the top of Send after fixes, and the leadership case study is the single
-thing that moves it into Send it." A score two points below a boundary should say
-so, because that is actionable in a way the number alone is not.
+thing that moves it into Send it." A score two percentage points below a boundary should
+say so, because that is actionable in a way the number alone is not.
 
 ### Context, only where it is earned
 
